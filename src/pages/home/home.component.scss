@@ -1,0 +1,414 @@
+@import "src/assets/styles/base/variables.scss";
+@import "src/assets/styles/base/mixins.scss";
+
+.home-wrapper {
+  display: grid;
+  @media screen and (max-width: $max-laptop) {
+    grid-template-rows: 416px auto;
+  }
+  @media screen and (min-width: $min-desktop) {
+    grid-template-rows: 658px auto;
+  }
+  header {
+    @include display-flex(column, flex-start);
+    justify-content: space-between;
+    transform: translateY(-81px);
+    width: 100%;
+    background: url('../../assets/images/pope.jpg') no-repeat center center / cover;
+    z-index: 1;
+    @media screen and (max-width: $max-laptop) {
+      height: 500px;
+    }
+    @media screen and (min-width: $min-desktop) {
+      height: 740px;
+    }
+    aside {
+      @include display-flex(column, stretch);
+      width: 90%;
+      height: 200px;
+      margin: 0 auto;
+      position: relative;
+      @media screen and (max-width: $max-tablet) {
+        margin-top: 100px;
+      }
+      @media screen and (min-width: $min-laptop) and (max-width: $max-laptop) {
+        margin-top: 140px;
+      }
+      @media screen and (min-width: $min-desktop) {
+        width: 500px;
+        height: 451px;
+        margin: 171px 0 0 134px;
+      }
+      .content {
+        flex: 1;
+        background-color: rgba(0, 0, 0, .75);
+        color: $c-white;
+        h1 {
+          font-weight: normal;
+        }
+        h2 {
+          font-weight: 300;
+        }
+        h3 {
+          font-weight: bold;
+        }
+        p {
+          font-weight: 300;
+        }
+        a {
+          @include display-flex;
+          color: $c-white;
+          font-weight: 300;
+          img {
+            width: 16px;
+            height: auto;
+            margin-right: 5px;
+          }
+        }
+        @media screen and (max-width: $max-laptop) {
+          padding: 20px;
+          h1 {
+            font-size: 30px;
+            line-height: 31px;
+          }
+          h2 {
+            font-size: 12px;
+          }
+          h3 {
+            font-size: 16px;
+          }
+          p {
+            margin: 15px 0;
+            font-size: 18px;
+            line-height: 25px;
+          }
+          a {
+            margin-bottom: 15px;
+          }
+        }
+        @media screen and (min-width: $min-desktop) {
+          padding: 35px 55px 35px 35px;
+            h1 {
+              font-size: 60px;
+              line-height: 61px;
+            }
+            h2 {
+              font-size: 16px;
+            }
+            h3 {
+              font-size: 20px;
+            }
+            p {
+              margin: 27px 0 25px;
+              font-size: 21px;
+              line-height: 23px;
+            }
+            a {
+              margin-bottom: 39px;
+              font-size: 14px;
+              font-weight: 300;
+            }
+        }
+      }
+      .vote {
+        @include display-flex;
+        width: 100%;
+        button {
+          width: 50%;
+          height: 100%;
+          border: 0;
+          border-radius: 0;
+          cursor: pointer;
+          background: no-repeat center center / 36px auto;
+          &:focus {
+            outline: 2px solid $c-white;
+          }
+          &.up {
+            background-image: url('../../assets/images/up.png');
+            background-color: $c-positive;
+          }
+          &.down {
+            background-image: url('../../assets/images/down.png');
+            background-color: $c-negative;
+          }
+        }
+        @media screen and (max-width: $max-laptop) {
+          height: 50px;
+          button {
+            background-size: 25px auto;
+          }
+        }
+        @media screen and (min-width: $min-desktop) {
+          height: 80px;
+        }
+      }
+    }
+    .bottom-bar {
+      @include display-flex;
+      width: 100%;
+      height: 50px;
+      .closing {
+        @include display-flex;
+        justify-content: flex-end;
+        position: relative;
+        width: 32%;
+        height: 100%;
+        padding-right: 10px;
+        background-color: rgba($c-lightest-grey, .3);
+        color: $c-white;
+        font-size: 13px;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 14px;
+          right: -8px;
+          width: 0px;
+          height: 0px;
+          border-top: 11px solid transparent;
+          border-bottom: 11px solid transparent;
+          border-left: 8px solid rgba($c-lightest-grey, .3);
+        }
+      }
+      .days {
+        @include display-flex;
+        width: 68%;
+        height: 100%;
+        padding-left: 15px;
+        background-color: rgba($c-white, .3);
+        color: $c-grey;
+        font-size: 36px;
+        font-weight: 300;
+        span {
+          margin-right: 5px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  
+  main {
+    width: 95%;
+    margin: 33px auto;
+    display: grid;
+    grid-template-rows: auto 117px auto 120px;
+    @media screen and (min-width: $min-laptop) {
+      width: 80%;
+      grid-template-rows: 100px 117px auto 120px;
+    }
+    .info-banner {
+      @include display-flex(column);
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding: 15px;
+      background-color: $c-light-pink;
+      @media screen and (min-width: $min-laptop) {
+        @include display-flex;
+        height: 100px;
+        padding: 0 27px;
+      }
+      .left-content {
+        @include display-flex(column);
+        flex: 0 0 auto;
+        padding-right: 24px;
+        font-size: 18px;
+        font-weight: 300;
+        span {
+          margin-bottom: 10px;
+          font-size: 25px;
+          font-weight: bold;
+        }
+        @media screen and (min-width: $min-laptop) {
+          font-size: 21px;
+          span {
+            margin: 0;
+            font-size: 37px;
+          }
+        }
+      }
+      .right-content {
+        @include display-flex;
+        p {
+          padding-right: 29px;
+          color: $c-dark;
+          font-size: 15px;
+          font-weight: 300;
+        }
+        button {
+          flex: 0 0 auto;
+          padding: 0;
+          color: $c-dark;
+          font-size: 20px;
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+          @media screen and (max-width: $max-tablet) {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+          }
+        }
+      }
+    }
+    h4 {
+      margin: 40px 0;
+      color: $c-dark;
+      font-size: 40px;
+      font-weight: 300;
+    }
+    .votes-container ::ng-deep .votes-grid {
+      display: grid;
+      @media screen and (max-width: $max-tablet) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 30px;
+      }
+      @media screen and (min-width: $min-laptop) and (max-width: $max-laptop) {
+        grid-template-columns: repeat(2, minmax(310px, 1fr));
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+      }
+      @media screen and (min-width: $min-laptop) {
+        grid-template-columns: repeat(2, minmax(310px, 1fr));
+      }
+      @media screen and (min-width: $min-desktop) {
+        grid-column-gap: 41px;
+        grid-row-gap: 41px;
+      }
+      .inner-vote {
+        display: grid;
+        grid-template-rows: 358px 143px 49px;
+        height: 550px;
+        color: $c-white;
+        background: no-repeat $c-grey center center / cover;
+        .top {
+          @include display-flex(column, flex-start);
+          justify-content: flex-end;
+        }
+        h5 {
+          @include display-flex;
+          font-size: 45px;
+          line-height: 45px;
+          font-weight: normal;
+          span {
+            width: 31px;
+            height: 31px;
+            flex: 0 0 auto;
+            margin-right: 7px;
+            background: no-repeat center center / 18px auto;
+            &.positive {
+              background-image: url('../../assets/images/up.png');
+              background-color: $c-positive;
+            }
+            &.negative {
+              background-image: url('../../assets/images/down.png');
+              background-color: $c-negative;
+            }
+          }
+          + span {
+            margin: 5px 0 0 40px;
+            font-size: 12px;
+          }
+        }
+        p {
+          margin: 12px 0 21px;
+          padding: 0 41px;
+          font-size: 16px;
+          font-weight: 300;
+        }
+        .actions {
+          @include display-flex;
+          justify-content: space-between;
+          width: 100%;
+          margin-bottom: 32px;
+          padding: 0 20px 0 41px;
+          .vote-act {
+            @include display-flex;
+          }
+          button {
+            width: 38px;
+            height: 38px;
+            margin-right: 15px;
+            color: $c-white;
+            font-size: 14px;
+            border-radius: 0;
+            border: 0;
+            cursor: pointer;
+            background: no-repeat center center / 18px auto;
+            &:not(.positive-vote):not(.negative-vote) {
+              width: 100px;
+              height: 40px;
+              margin: 0;
+              border: 1px solid $c-white;
+              background-color: transparent;
+            }
+            &.positive-vote {
+              background-image: url('../../assets/images/up.png');
+              background-color: $c-positive;
+            }
+            &.negative-vote {
+              background-image: url('../../assets/images/down.png');
+              background-color: $c-negative;
+            }
+            &.active {
+              border: 2px solid $c-white;
+            }
+          }
+        }
+        .results {
+          @include display-flex;
+          width: 100%;
+          height: 49px;
+          font-size: 29px;
+          font-weight: 300;
+          .up {
+            @include display-flex;
+            width: 64%;
+            height: 100%;
+            padding-left: 47px;
+            background: url('../../assets/images/up.png') $c-positive no-repeat 7px center / 28px auto;
+          }
+          .down {
+            @include display-flex;
+            justify-content: flex-end;
+            width: 36%;
+            height: 100%;
+            padding-right: 40px;
+            background: url('../../assets/images/down.png') $c-negative no-repeat calc(100% - 7px) center / 28px auto;
+          }
+        }
+      }
+    }
+    .message {
+      @include display-flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 80px;
+      margin: 36px 0 39px;
+      padding: 0 28px 0 33px;
+      background: url("../../assets/images/message-bg.jpg") no-repeat 0 0;
+      @media screen and (min-width: $min-laptop) {
+        p {
+          font-size: 30px;
+        }
+        button {
+          width: 210px;
+          height: 53px;
+        }
+      }
+      p {
+        color: $c-dark;
+        font-size: 18px;
+        font-weight: 300;
+      }
+      button {
+        padding: 15px;
+        color: $c-dark;
+        font-size: 14px;
+        border: 3px solid $c-dark;
+        border-radius: 0;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+  }
+}
