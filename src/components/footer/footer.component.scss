@@ -1,0 +1,41 @@
+@import "src/assets/styles/base/variables.scss";
+@import "src/assets/styles/base/mixins.scss";
+
+footer {
+  @include display-flex(column);
+  width: 95%;
+  margin: 0 auto;
+  padding: 34px 0;
+  border-top: 1px dotted $c-light-grey;
+  @media screen and (min-width: $min-laptop) {
+    @include display-flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+  ul {
+    @include display-flex;
+    margin: 0 0 15px;
+    @media screen and (min-width: $min-laptop) {
+      margin: 0;
+    }
+    &.follow-us {
+      color: $c-brownish-grey;
+    }
+    li {
+      font-size: 12px;
+      font-weight: 300;
+      &:not(:last-child) {
+        margin-right: 22px;
+      }
+      a {
+        color: $c-dark;
+        text-decoration: none;
+      }
+      img {
+        display: block;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
