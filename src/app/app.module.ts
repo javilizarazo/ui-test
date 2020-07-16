@@ -8,6 +8,8 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { PastTrialsComponent } from '../pages/past-trials/past-trials.component';
+import { VotesComponent } from '../components/votes/votes.component';
+import { DataService } from '../services/data.service';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,13 @@ import { PastTrialsComponent } from '../pages/past-trials/past-trials.component'
     AppComponent,
     HomeComponent,
     PastTrialsComponent,
+    VotesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

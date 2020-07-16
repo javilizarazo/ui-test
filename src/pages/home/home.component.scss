@@ -256,7 +256,7 @@
       font-size: 40px;
       font-weight: 300;
     }
-    .vote {
+    .votes-container ::ng-deep .votes-grid {
       display: grid;
       @media screen and (max-width: $max-tablet) {
         grid-template-columns: 1fr;
@@ -274,12 +274,16 @@
         grid-column-gap: 41px;
         grid-row-gap: 41px;
       }
-      > div {
-        @include display-flex(column, flex-start);
-        justify-content: flex-end;
+      .inner-vote {
+        display: grid;
+        grid-template-rows: 358px 143px 49px;
         height: 550px;
         color: $c-white;
         background: no-repeat $c-grey center center / cover;
+        .top {
+          @include display-flex(column, flex-start);
+          justify-content: flex-end;
+        }
         h5 {
           @include display-flex;
           font-size: 45px;
@@ -288,6 +292,7 @@
           span {
             width: 31px;
             height: 31px;
+            flex: 0 0 auto;
             margin-right: 7px;
             background: no-repeat center center / 18px auto;
             &.positive {
@@ -298,6 +303,10 @@
               background-image: url('../../assets/images/down.png');
               background-color: $c-negative;
             }
+          }
+          + span {
+            margin: 5px 0 0 40px;
+            font-size: 12px;
           }
         }
         p {
@@ -326,7 +335,7 @@
             cursor: pointer;
             background: no-repeat center center / 18px auto;
             &:not(.positive-vote):not(.negative-vote) {
-              width: 156px;
+              width: 100px;
               height: 40px;
               margin: 0;
               border: 1px solid $c-white;
@@ -344,10 +353,6 @@
               border: 2px solid $c-white;
             }
           }
-          div {
-            @include display-flex(column, flex-end);
-            font-size: 12px;
-          }
         }
         .results {
           @include display-flex;
@@ -360,7 +365,7 @@
             width: 64%;
             height: 100%;
             padding-left: 47px;
-            background: url('../../assets/images/up.png') $c-positive no-repeat 4% center / 28px auto;
+            background: url('../../assets/images/up.png') $c-positive no-repeat 7px center / 28px auto;
           }
           .down {
             @include display-flex;
@@ -368,7 +373,7 @@
             width: 36%;
             height: 100%;
             padding-right: 40px;
-            background: url('../../assets/images/down.png') $c-negative no-repeat 93% center / 28px auto;
+            background: url('../../assets/images/down.png') $c-negative no-repeat calc(100% - 7px) center / 28px auto;
           }
         }
       }

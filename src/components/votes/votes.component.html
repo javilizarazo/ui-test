@@ -1,0 +1,55 @@
+<div class="votes-grid">
+  <div class="inner-vote"
+    [ngStyle]="{ 'background-image': 'url(../../assets/images/' + vote.photo + ')' }"
+    *ngFor="let vote of votes; let i = index">
+    <div class="top">
+      <h5>
+        <span [ngClass]="{
+            'positive': vote.posPer > vote.negPer,
+            'negative': vote.negPer > vote.posPer
+          }">
+        </span>
+        {{ vote.person }}
+      </h5>
+      <span>
+        <b>{{ vote.timeAgo }}</b> in {{ vote.categoy }}
+      </span>
+    </div>
+
+    <div *ngIf="!vote.hasVoted; else hasVoted">
+      <p>{{ vote.description }}</p>
+
+      <div class="actions">
+        <div class="vote-act">
+          <button class="positive-vote"
+            [ngClass]="{ 'active': posActive == i }"
+            (click)="voteClick('pos', i)">
+          </button>
+          <button class="negative-vote"
+            [ngClass]="{ 'active': negActive == i }"
+            (click)="voteClick('neg', i)">
+          </button>
+          <button (click)="sendVote(i, vote)">Vote Now</button>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #hasVoted>
+      <div>
+        <p>Thank you for voting!</p>
+        <div class="actions">
+          <button (click)="voteAgain(vote)">Vote Again</button>
+        </div>
+      </div>
+    </ng-template>
+
+    <div class="results">
+      <div class="up" [ngStyle]="{ 'width': vote.posPer + '%' }">
+        {{ vote.posPer }}%
+      </div>
+      <div class="down" [ngStyle]="{ 'width': vote.negPer + '%' }">
+        {{ vote.negPer }}%
+      </div>
+    </div>
+  </div>
+</div>
