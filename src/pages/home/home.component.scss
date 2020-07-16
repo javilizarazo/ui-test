@@ -41,8 +41,9 @@
       }
       .content {
         flex: 1;
-        background-color: rgba(0, 0, 0, .75);
+        background-color: rgba($c-grey, .6);
         color: $c-white;
+        backdrop-filter: blur(10px);
         h1 {
           font-weight: normal;
         }
