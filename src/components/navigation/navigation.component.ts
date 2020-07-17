@@ -12,4 +12,17 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  show: boolean = false;
+
+  showMenu() {
+    const body = document.getElementsByTagName('body')[0];
+    this.show = !this.show;
+
+    if(this.show) {
+      body.classList.add('menu-open');
+    } else {
+      body.classList.remove('menu-open');
+    }
+  }
+
 }

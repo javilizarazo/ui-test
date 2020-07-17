@@ -21,6 +21,9 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   background-color: $c-white;
+  &.menu-open {
+    overflow: hidden;
+  }
   .wrapper {
     position: relative;
     width: 100%;

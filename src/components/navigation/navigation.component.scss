@@ -10,9 +10,8 @@ nav {
   position: relative;
   z-index: 2;
   @media screen and (max-width: $max-laptop) {
-    width: 90%;
     margin: 0 auto;
-    padding: 22px 0 0;
+    padding: 22px 5% 0;
   }
   @media screen and (min-width: $min-desktop) {
     width: 100%;
@@ -23,10 +22,15 @@ nav {
     color: $c-white;
     font-size: 32px;
     text-decoration: none;
+    @media screen and (max-width: $max-tablet) {
+      position: relative;
+      z-index: 3;
+    }
   }
   .menu-mobile {
     @include display-flex;
     justify-content: center;
+    position: relative;
     width: 40px;
     height: 40px;
     padding: 0;
@@ -35,12 +39,13 @@ nav {
     border: 1px solid $c-white;
     color: $c-white;
     cursor: pointer;
+    z-index: 3;
     @media screen and (min-width: $min-laptop) {
       display: none;
     }
   }
   ul {
-    display: none;
+    @include display-flex;
     li {
       margin-left: 53px;
       a {
@@ -53,13 +58,31 @@ nav {
         }
       }
     }
-    @media screen and (max-width: $max-laptop) {
+    @media screen and (max-width: $max-tablet) {
+      @include display-flex(column, flex-start);
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      padding: 100px 35px 0;
+      background-color: rgba($c-dark, .9);
+      z-index: 2;
+      &[hidden] {
+        display: none;
+      }
+      li {
+        margin: 0 0 40px;
+        a {
+          font-size: 22px;
+        }
+      }
+    }
+    @media screen and (min-width: $min-laptop) and (max-width: $max-laptop) {
       li {
         margin-left: 38px;
       }
-    }
-    @media screen and (min-width: $min-laptop) {
-      @include display-flex;
     }
   }
 }
