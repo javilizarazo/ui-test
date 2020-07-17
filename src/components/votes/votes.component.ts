@@ -21,11 +21,12 @@ export class VotesComponent implements OnInit {
   }
 
   getData() {
+    let dataObj = this.data.sendData();
 
     if(localStorage.getItem("votes")) {
       this.newVotes = JSON.parse(localStorage.getItem("votes"));
     } else {
-      this.newVotes = this.data.sendData().slice();
+      this.newVotes = [...dataObj];
       localStorage.setItem('votes', JSON.stringify(this.newVotes));
     }
 
