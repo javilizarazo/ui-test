@@ -45,10 +45,12 @@
 
     <div class="results">
       <div class="up" [ngStyle]="{ 'width': vote.posPer + '%' }">
+        <img src="../../assets/images/up.png" alt="Thumb Up">
         {{ vote.posPer }}%
       </div>
       <div class="down" [ngStyle]="{ 'width': vote.negPer + '%' }">
         {{ vote.negPer }}%
+        <img src="../../assets/images/down.png" alt="Thumb Down">
       </div>
     </div>
   </div>
