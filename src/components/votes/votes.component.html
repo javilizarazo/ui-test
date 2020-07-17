@@ -12,7 +12,7 @@
         {{ vote.person }}
       </h5>
       <span>
-        <b>{{ vote.timeAgo }}</b> in {{ vote.categoy }}
+        <b>{{ vote.timeAgo }} ago</b> in {{ vote.categoy }}
       </span>
     </div>
 
@@ -29,7 +29,7 @@
             [ngClass]="{ 'active': negActive == i }"
             (click)="voteClick('neg', i)">
           </button>
-          <button (click)="sendVote(i, vote)">Vote Now</button>
+          <button (click)="sendVote(i, vote)">Vote now</button>
         </div>
       </div>
     </div>
@@ -38,7 +38,7 @@
       <div>
         <p>Thank you for voting!</p>
         <div class="actions">
-          <button (click)="voteAgain(vote)">Vote Again</button>
+          <button (click)="voteAgain(vote)">Vote again</button>
         </div>
       </div>
     </ng-template>

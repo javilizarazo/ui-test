@@ -8,6 +8,8 @@ import { FooterComponent } from '../components/footer/footer.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { PastTrialsComponent } from '../pages/past-trials/past-trials.component';
+import { HowItWorksComponent } from '../pages/how-it-works/how-it-works.component';
+import { LoginComponent } from '../pages/login/login.component';
 import { VotesComponent } from '../components/votes/votes.component';
 import { DataService } from '../services/data.service';
 
@@ -19,6 +21,8 @@ import { DataService } from '../services/data.service';
     AppComponent,
     HomeComponent,
     PastTrialsComponent,
+    HowItWorksComponent,
+    LoginComponent,
     VotesComponent,
   ],
   imports: [

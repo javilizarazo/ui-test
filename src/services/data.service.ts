@@ -4,7 +4,7 @@ const voteData = [
   {
     person: "Kanye West",
     description: "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-    timeAgo: "1 Month",
+    timeAgo: "1 month",
     categoy: "Entertainment",
     positive: 10,
     negative: 20,
@@ -14,7 +14,7 @@ const voteData = [
   {
     person: "Mark Zuckerberg",
     description: "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-    timeAgo: "1 Month",
+    timeAgo: "1 month",
     categoy: "Business",
     positive: 30,
     negative: 20,
@@ -24,7 +24,7 @@ const voteData = [
   {
     person: "Cristina Fernández de Kirchner",
     description: "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-    timeAgo: "1 Month",
+    timeAgo: "1 month",
     categoy: "Politics",
     positive: 120,
     negative: 180,
@@ -34,7 +34,7 @@ const voteData = [
   {
     person: "Malala Yousafzai",
     description: "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
-    timeAgo: "1 Month",
+    timeAgo: "1 month",
     categoy: "Entertainment",
     positive: 60,
     negative: 20,
