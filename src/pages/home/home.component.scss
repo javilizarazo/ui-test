@@ -12,7 +12,7 @@
   header {
     @include display-flex(column, flex-start);
     justify-content: space-between;
-    transform: translateY(-81px);
+    transform: translateY(-84px);
     width: 100%;
     background: url('../../assets/images/pope.jpg') no-repeat center center / cover;
     z-index: 1;

@@ -21,7 +21,7 @@ export class VotesComponent implements OnInit {
   }
 
   getData() {
-    let dataObj = this.data.sendData();
+    const dataObj = this.data.sendData();
 
     if(localStorage.getItem("votes")) {
       this.newVotes = JSON.parse(localStorage.getItem("votes"));
